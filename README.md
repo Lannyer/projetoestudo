@@ -251,7 +251,7 @@ usamos o comando 'add origin <url-do-diretorio.git>'
 - O comando _fetch_ traz as alterações de uma branch no repositório remoto para o repositório local. Por exemplo, se um dev está no Japão, usamos o comando _fetch_ para trazer suas alterações no projeto para nossa máquina local.
 _Ex:_
 ~~~
-
+git fetch
 ~~~
 - Já o comando _push_ envia às alterações para o repositório remoto.
 _Ex:_
