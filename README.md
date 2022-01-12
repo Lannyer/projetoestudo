@@ -30,14 +30,14 @@ d:
 ~~~
 
 __dir:__ para visualizar o conteúdo de um diretório, no Windows.
-> Pode ser usado, também, o comando 'tree /f' para Windows ou o comando 'ls' para iOs e Linux.
+> Pode ser usado, também, o comando ```tree /f``` para Windows ou o comando ```ls``` para iOs e Linux.
 
 __mkdir:__ para criar um novo diretório.
 _Ex:_
 ~~~
 mkdir <nome do diretório>
 ~~~
-> para entrar no novo diretório, basca usar o comando 'cd'
+>Para entrar no novo diretório, basca usar o comando ```cd```
 
 __ls:__ ppara listar os arquivos e pastas do diretório.
 
@@ -46,7 +46,7 @@ __ls:__ ppara listar os arquivos e pastas do diretório.
 
 **_GIT 01 - Hello Friend!_**
 
-O Git é um sistema de vercionamento de código. Com versionamento é possível encurtar e simplificar os processos de produção de código, solo ou em equipe. Para realizar o versionamento, os principais servidores são o [Git Hub](https://github.com), [GitLab](https://gitlab.com) e o [BitBucket](https://bitbucket.org). Para utilizar o Git, é necessário instalá-lo, pode-se fazer isso baixando o Git diretamente do [site do Git](https://git-scm.com). Você pode também instalar algum terminal que já venha com o Git em conjunto, como por exemplo o (Cmder)[https://cmder.net].
+O Git é um sistema de vercionamento de código. Com versionamento é possível encurtar e simplificar os processos de produção de código, solo ou em equipe. Para realizar o versionamento, os principais servidores são o [Git Hub](https://github.com), [GitLab](https://gitlab.com) e o [BitBucket](https://bitbucket.org). Para utilizar o Git, é necessário instalá-lo, pode-se fazer isso baixando o Git diretamente do [site do Git](https://git-scm.com). Você pode também instalar algum terminal que já venha com o Git em conjunto, como por exemplo o [Cmder](https://cmder.net).
 
 
 __Repositório:__ é o nome dado para o projeto. É literalmente um repositório de códigos.
@@ -83,59 +83,54 @@ para configurar o email. É comum a configuração, também do editor, que é fe
 git config --global core.editor nome-do-editor
 ~~~
 >É comum vermos comandos com apenas um traço, que é a forma abreviada de um comando enquanto com dois traços é o comando "por extenso".
->Uma outra razão é permitir distinguir uma opção, constituída por vários caracteres, de uma sequência de opções. Se 'merged' fosse escrita com um traço seria interpretada como ```-m-e-r-g-e-d```. Um exemplo disso é o comando ```git commit -am "blabla"``` que executa o 'add' (a) e atribui uma 'mensage' (m) ao commit.
->Vários programas tem o comando 'help', que você pode acessar.
-__Ex:__
-~~~
-nome_do_programa --help
-~~~
-ou
-~~~
-nome_do_programa -h
-~~~
+>Uma outra razão é permitir distinguir uma opção, constituída por vários caracteres, de uma sequência de opções. Se 'merged' fosse escrita com um traço seria interpretada como ```-m-e-r-g-e-d```. Um exemplo disso é o comando ```git commit -am "blabla"``` que executa o ```add (a)``` e atribui uma ```mensage (m)``` ao commit.
 
 __help:__ - ao adicionar o comando "help" depois de um comando, abre-se a lista de opções desse comando.
 _Ex:_
 ~~~
-git commit help
+git comando --help
+~~~
+ou
+~~~
+git comando -h
 ~~~
 
 __git --version:__ mostra se o Git está instalado e sua versão
 
-__git init:__ - para iniciar um repositório, levando em consideração TODOS os arquivos e pastas dentro do diretório. É criada uma pasta ".git", geralmente oculta.
+__git init:__ - para iniciar um repositório, levando em consideração TODOS os arquivos e pastas dentro do diretório. É criada uma pasta _.git_, geralmente oculta.
 
 __git status:__ - mostra a situação do projeto.
 
-__git add:__ - adiciona os arquivos para trabalho, fazendo que sejam localizados pelo Git quando utilizamos o comando 'git status'.
+__git add:__ - adiciona os arquivos para trabalho, fazendo que sejam localizados pelo Git quando utilizamos o comando _git status_.
 _Ex:_
 ~~~
-git add <file>
+git add "nome-do-arquivo.extenção"
 ~~~
 
 Para adicionar todos os arquivos do diretório utiliza-se a seguinte sintaxe:
 ~~~
 git add -A
 ~~~
-A letra "A" deve ser maiúscula. Para ver todas as opções do comando 'git add' 
+A letra "A" deve ser maiúscula. Para ver todas as opções do comando _git add_. 
 
 __git rm:__ - para excluir arquivos da branch.
 _Ex:_
 ~~~
-git rm <file>
+git rm "nome-do-arquivo.extenção"
 ~~~
 
-Para forçar a deleção, também do diretório acrescentamos '--comando'
+Para forçar a deleção, também do diretório acrescentamos ```--comando```
 ~~~
 git rm --comando <file>
 ~~~
-> Ao usar ```git rm --cached "file"```, removemos do histórico de edições. para mais funcionalidades 'git rm help'.
+> Ao usar ```git rm --cached "nome-do-arquivo.extenção"```, removemos do histórico de edições. para mais funcionalidades ```git rm help```.
 
 __git commit:__ - é oque, de fato, realiza as alterações do projeto. É de boas práticas realizar um commit junto de um comentário pertinente aos trabalhos realizados no projeto.
 _Ex:_
 ~~~
 git commit -m "Comentário relevante"
 ~~~
-> A função '-m' é utilizada para inserir um comentário ao commit. Se for usado apenas 'git commit' é necessário escrever um comentário e outros comandos, que honestamente, não consegui executar, nem fazer funcionar. Talvez pela versão do Git, ou do Cmder, serem diferentes dos usados nas vídeo-aulas. Para mais funções do 'git commit help'.
+> A função ```-m``` é utilizada para inserir um comentário ao commit. Se for usado apenas ```git commit``` é necessário escrever um comentário e outros comandos, que honestamente, não consegui executar, nem fazer funcionar. Talvez pela versão do Git, ou do Cmder, serem diferentes dos usados nas vídeo-aulas. Para mais funções do 'git commit help'.
 >Utilizando o comando 'git commit -am "Comentário relevante"' adicionamos diretamente os arquivos não commitados, como se usássemos o comando 'git add -A' junto do 'git commit -m'
 
 __git log:__ - retorna os commits feitos, com um código hash, a branch onde o commit foi realizado, dados como autor, data, etc e a mensagem do commit. 
@@ -147,6 +142,11 @@ git log
 __git branch:__ mostra com um asterisco na branch que estamos.
 > Para criação de uma nova branch usamos o comando 'git branch <nomedabranch>'. Este comando irá copiar toda a branch a partir da qual está sendo criada.
 
+Usando o comando ```-D``` podemos eliminar uma branch criada localmente.
+_Ex:_
+~~~
+git branch -D "nome-da-branch"
+~~~
 
 ---
 
@@ -174,6 +174,7 @@ git reset --hard <hash do commit>
 >Não recomendado no uso em trabalhos de equipe.
 
 __git checkout:__ usado para mudar para a nova branch.
+>__ATENÇÃO!__ Aparentemente, se realizar o checkout sem commitar as alterações pendentes de commit, elas são sobrescritas e você as perde. lembre-se de conferir isso, geralmente o terminal nos lembra de fazer isso.
 _Ex:_
 ~~~
 git checkout <branch de destino>
@@ -260,10 +261,9 @@ _Ex:_
 ~~~
 git remote add origin https://github.com/usuario/repositorio.git
 ~~~
->Comumente usasse o nome _origin_ para o repositório.
-> Para adicionar um repositório local em um repositório remoto
-usamos o comando 'add origin <url-do-diretorio.git>'
->O comando 'remote -v' mostra as opções do repositório. Normalmente os comandos possíveis são _fetch_ e _push_.
+>Comumente usasse o nome **origin** para o repositório.
+>Para adicionar um repositório local em um repositório remoto usamos o comando ```add origin "url-do-diretorio.git"```.
+>O comando ```remote -v``` mostra as opções do repositório. Normalmente os comandos possíveis são _fetch_ e _push_.
 
 - O comando _fetch_ traz as alterações de uma branch no repositório remoto para o repositório local. Por exemplo, se um dev está no Japão, usamos o comando _fetch_ para trazer suas alterações no projeto para nossa máquina local.
 _Ex:_
@@ -275,6 +275,13 @@ _Ex:_
 ~~~
 git push -u origin master
 ~~~
+
+Para remover um branch remoto, também utilizamos o comando _push_, colocando o sinal de dois pontos antes do nome da branch que desejamos eliminar.
+_EX:_
+~~~
+git push origin :"nome-da-branch"
+~~~
+>Desta forma, é possível eliminar também, arquivos, diretórios, tags e etc.
 
 __git ignore:__ usado para ignorar algum arquivo ou pasta. Para isso, basta criar um arquivo chamado .gitignore e nele colocar o nome dos aruiqvos, com extenção, para que ele seja ignorado quando executar adiçõs e commits.
 __Ex:__ 
@@ -295,4 +302,10 @@ git revert --no-edit "hash do commit"
 ~~~
 >Caso não seja usado o comando ```--no.edit```, o programa registrado na configuração do Git irá abrir com o código a ser editado.
 
+__git pull:__ para trazer os arquivos e commits remotos, que foram adicionados por outros usuários, para o git local.
+_Ex:_
+~~~
+git pull origin "nome-da-branch"
+~~~
+>Sempre faça um ```pull``` antes do ```push```. 
 
