@@ -1,13 +1,12 @@
-###TERMINAL, GIT, WORKFLOW & GITHUB
+###GIT 101
 
 
 ##TERMINAL
 
-É o Prompt de comando do Windows. É comum utilizado terminais de terceiros, ou seja, programas de terminal com funcionalidades avançadas. O Cmder, por exemplo, já vem com o Git instalado.
+É o Prompt de comando do Windows, chamado de Terminal no Linux e no iOS. É comum utilizar terminais de terceiros, ou seja, programas de terminal com funcionalidades avançadas. O Cmder, por exemplo, já vem com o Git instalado.
 
 
 **- Comandos básicos de terminal**
-
 
 __cd:__ Usado para acessar pastas/diretórios.
 _Ex:_
@@ -135,10 +134,10 @@ git log
 __git branch:__ mostra com um asterisco na branch que estamos.
 > Para criação de uma nova branch usamos o comando 'git branch <nomedabranch>'. Este comando irá copiar toda a branch a partir da qual está sendo criada.
 
+
 ---
 
 ##GIT 02 - Título a ser decidido
-
 
 __git reset:__ utilizado para reverter alterações em uma branch.
 >Utiliza-se todo o código hash do commit, ou seus sete primeiros dígitos. 
@@ -166,14 +165,14 @@ _Ex:_
 ~~~
 git checkout <branch de destino>
 ~~~
-> Podemos usar o _git checkout_ para retornar as alterações de um arquivo.
+>Podemos usar o _git checkout_ para retornar as alterações de um arquivo.
 _Ex:_
 ~~~
 git checkout HEAD -- <file>
 ~~~
-> o comando _HEAD_ substitui o nome da branch atual, enquanto o duplo hífen, seguido de espaço, indica que o que vier depois será o nome de um arquivo.
+>O comando _HEAD_ substitui o nome da branch atual, enquanto o duplo hífen, seguido de espaço, indica que o que vier depois será o nome de um arquivo.
 
-__Git Diff__ - para verificar quais alterações foram feitas.
+__git diff:__ - para verificar quais alterações foram feitas.
 _Ex:_
 ~~~
 git diff
@@ -187,19 +186,21 @@ _Ex:_
 ~~~
 git diff --name-only
 ~~~
-> Para mostrar as alterações de um único arquivo da branch, entre os que foram alterados, basta acrescentar o nome do arquivo.
+
+Para mostrar as alterações de um único arquivo da branch, entre os que foram alterados, basta acrescentar o nome do arquivo.
 _Ex:_
 ~~~
 git diff <file>
 ~~~
+
+
 ---
 
-Não tem necessidade de explicar que é preciso ter uma conta em um serviço de repositório Git, como o Git Hub.
+##GIT 03 - Git quem?
 
----
+Vamos ver agora como criar um repositório remoto. Repositórios remotos são os repositórios em um servidor Git como o [GitHub](https://github.com), [GitLab](gitlab.com), [BitBucket](https://bitbucket.org), [SourceForge](https://sourceforge.net), [Launchpad](https://launchpad.net), [Apache Allura](https://allura.apache.org) e etc.
 
-
-##GIT 03 - Criando um repositório
+Não tem necessidade de explicar que é preciso ter uma conta em um serviço de repositório Git, como os citados a cima. Caso não tenha, basta se cadastrar em um serviço de repositório de sua preferência. 
 
 
 	1. Para criar um repositório no Git Hub é preciso:
@@ -225,29 +226,32 @@ _Ex:_
 ~~~
 ssh-keygen -t rsa -b 4096 -C "seu@email.com"
 ~~~
-> É necessário que seja o mesmo email usado no cadastro do Git Hub
-> Insira, ou não, uma senha. Confirme a senha, caso tenha colocado uma, e em seguida dê enter.
+>É necessário que seja o mesmo email usado no cadastro do Git Hub
+>Insira, ou não, uma senha. Confirme a senha, caso tenha colocado uma, e em seguida dê enter.
 
-	5. No diretório, indicado pelo terminal, procure as chaves e abra a chave pública no seu editor de códigos. Copie o código da chave pública e cole na área indicada pelo _Git Hub_.
+	5. No diretório, indicado pelo terminal, procure as chaves e abra a chave pública no seu editor de códigos. Copie o código da chave pública e cole na área indicada pelo seu servidor Git.
+	6. Na opção 'Settings' do servidor, procure pela opção 'SSH and GPG keys' e clique em 'New SSH key'.
+	7. Na área indicada cole a chave SSH pública e e confirme a ação. Ao fazer isto, você estará pronto pra enviar seus projetos do seu repositório Git local, para seu repositório Git remoto.
 
 ---
 
 
 **-Mais comandos Git**
 
-__Git Remote__ - é o repositório remoto, ou seja, o repositório criado no _Git Hub_.
+__git remote:__ - é o repositório remoto, ou seja, o repositório criado no _Git Hub_.
 _Ex:_
 ~~~
 git remote add origin https://github.com/usuario/repositorio.git
 ~~~
-> Comumente usasse o nome _origin_ para o repositório.
+>Comumente usasse o nome _origin_ para o repositório.
 > Para adicionar um repositório local em um repositório remoto
 usamos o comando 'add origin <url-do-diretorio.git>'
-> O comando 'remote -v' mostra as opções do repositório. Normal mente os comandos possíveis são _fetch_ e _push_.
-- O comando _fetch_ traz as alterações de uma branch para o repositório. Por exemplo, se um dev está no Japão, usamos o comando _fetch_.
+>O comando 'remote -v' mostra as opções do repositório. Normalmente os comandos possíveis são _fetch_ e _push_.
+
+- O comando _fetch_ traz as alterações de uma branch no repositório remoto para o repositório local. Por exemplo, se um dev está no Japão, usamos o comando _fetch_ para trazer suas alterações no projeto para nossa máquina local.
 _Ex:_
 ~~~
-asasdas
+
 ~~~
 - Já o comando _push_ envia às alterações para o repositório remoto.
 _Ex:_
