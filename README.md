@@ -1,7 +1,7 @@
-###GIT 101
+**GIT 101**
+---
 
-
-##TERMINAL
+**_TERMINAL_**
 
 É o Prompt de comando do Windows, chamado de Terminal no Linux e no iOS. É comum utilizar terminais de terceiros, ou seja, programas de terminal com funcionalidades avançadas. O Cmder, por exemplo, já vem com o Git instalado.
 
@@ -44,9 +44,9 @@ __ls:__ ppara listar os arquivos e pastas do diretório.
 ---
 
 
-##GIT 01 - Hello Friend!
+**_GIT 01 - Hello Friend!_**
 
-O Git é um sistema de vercionamento de código. Com versionamento é possível encurtar e simplificar os processos de produção de código, solo ou em equipe. Para realizar o versionamento, os principais servidores são o [Git Hub](https://github.com) e o (Bitbucket)[https://bitbucket.org]. Para utilizar o Git, é necessário instalá-lo, pode-se fazer isso baixando o Git diretamente do [site](https://git-scm.com). Você pode também instalar algum terminal que já venha com o Git em conjunto, como por exemplo o (Cmder)[https://cmder.net].
+O Git é um sistema de vercionamento de código. Com versionamento é possível encurtar e simplificar os processos de produção de código, solo ou em equipe. Para realizar o versionamento, os principais servidores são o [Git Hub](https://github.com), [GitLab](https://gitlab.com) e o [BitBucket](https://bitbucket.org). Para utilizar o Git, é necessário instalá-lo, pode-se fazer isso baixando o Git diretamente do [site do Git](https://git-scm.com). Você pode também instalar algum terminal que já venha com o Git em conjunto, como por exemplo o (Cmder)[https://cmder.net].
 
 
 __Repositório:__ é o nome dado para o projeto. É literalmente um repositório de códigos.
@@ -61,13 +61,26 @@ __Comandos:__ todos os comandos do Git se iniciam com o comando git.
 
 **- Configurando o Git**
 
-O primeiro passo para configurar o Git é associar um nome de usuário e um email. Esse processo acontecerá através do comando ~git config --global user.name "Nome-de-Usuário"~ e ~git config --global user.email "email@email.com"~ para configurar o email. É comum a coonfiguração, também do editor, que é feito apartir do código ~git config --global core.editor sub~
+O primeiro passo para configurar o Git é associar um nome de usuário e um email. 
 
 **- Comandos básicos do Git**
 
-__git config:__ para configurar o Git.
+__git config:__ usado para configurar o Git.
+__Ex:__
 ~~~
- git config --global
+git config --global user.name "Nome-de-Usuário"
+~~~
+
+para configurar o nome do usuário.
+
+~~~
+git config --global user.email "email@email.com"
+~~~
+
+para configurar o email. É comum a configuração, também do editor, que é feito apartir do código
+
+~~~
+git config --global core.editor nome-do-editor
 ~~~
 >É comum vermos comandos com apenas um traço, que é a forma abreviada de um comando enquanto com dois traços é o comando "por extenso".
 >Uma outra razão é permitir distinguir uma opção, constituída por vários caracteres, de uma sequência de opções. Se 'merged' fosse escrita com um traço seria interpretada como ~-m-e-r-g-e-d~. Um exemplo disso é o comando ~git commit -am "blabla"~ que executa o 'add' (a) e atribui uma 'mensage' (m) ao commit.
@@ -137,7 +150,7 @@ __git branch:__ mostra com um asterisco na branch que estamos.
 
 ---
 
-##GIT 02 - Título a ser decidido
+**_GIT 02 - Título a ser decidido_**
 
 __git reset:__ utilizado para reverter alterações em uma branch.
 >Utiliza-se todo o código hash do commit, ou seus sete primeiros dígitos. 
@@ -196,14 +209,14 @@ git diff <file>
 
 ---
 
-##GIT 03 - Git quem?
+**_GIT 03 - Git quem?_**
 
 Vamos ver agora como criar um repositório remoto. Repositórios remotos são os repositórios em um servidor Git como o [GitHub](https://github.com), [GitLab](gitlab.com), [BitBucket](https://bitbucket.org), [SourceForge](https://sourceforge.net), [Launchpad](https://launchpad.net), [Apache Allura](https://allura.apache.org) e etc.
 
 Não tem necessidade de explicar que é preciso ter uma conta em um serviço de repositório Git, como os citados a cima. Caso não tenha, basta se cadastrar em um serviço de repositório de sua preferência. 
 
 
-	1. Para criar um repositório no Git Hub é preciso:
+1. Para criar um repositório no Git Hub é preciso:
 	- Ir no canto superior direito, ao lado da foto do usuário, clicar no botão de mais e em seguida em _New repository_. Ou procurar isso em algum canto da tela.
 	- Adicionar um nome para o repositório, sem letras maiúsculas e caracteres especiais, uma descrição e definir se ele será público ou privado.
 	- Escolhe-se criar um arquivo README ou não. É possível acrescentar um arquivos README manualmente e enviar para o repositório.
@@ -216,20 +229,24 @@ _Ex:_
  https://github.com/usuario/nome-do-repositorio.git
 ~~~
 
-	 2. Para criar uma conexão entre um repositório local é necessário:
+2. Para criar uma conexão entre um repositório local é necessário:
 	- Clicar na foto de perfil > settings > SSH and GPG keys > New SSH key
 	- Em seguida criasse um título para o repositório e colamos a chave pública gerada no _Git Bach_.
 
-	 3. Para criar as chaves públicas e privadas é necessário ter o _Git Bach_ "instalado", que nada mais é do que um terminal próprio do Git. Ao instalar o Cmder, o _Git Bach_ é instalado automaticamente. É possível entrar no site oficial do _Git_ e baixá-lo para o computador ou procurar por "Git Bach" no Google e fazer o download do arquivo. Será necessário procurar um tutorial de como instalar pq eu honestamente não faço a puta.
+3. Para criar as chaves públicas e privadas é necessário ter o _Git Bach_ "instalado", que nada mais é do que um terminal próprio do Git.
 
-	4. Depois de instalar o _bach_, vá até o terminal e digite o código:
+Ao instalar o Cmder, o _Git Bach_ é instalado automaticamente. É possível entrar no site oficial do _Git_ e baixá-lo para o computador ou procurar por "Git Bach" no Google e fazer o download do arquivo. 
+
+Será necessário procurar um tutorial de como instalar pq eu honestamente não faço a puta.
+
+4. Depois de instalar o _bach_, vá até o terminal e digite o código:
 ~~~
 ssh-keygen -t rsa -b 4096 -C "seu@email.com"
 ~~~
 >É necessário que seja o mesmo email usado no cadastro do Git Hub
 >Insira, ou não, uma senha. Confirme a senha, caso tenha colocado uma, e em seguida dê enter.
 
-	5. No diretório, indicado pelo terminal, procure as chaves e abra a chave pública no seu editor de códigos. Copie o código da chave pública e cole na área indicada pelo seu servidor Git.
+5. No diretório, indicado pelo terminal, procure as chaves e abra a chave pública no seu editor de códigos. Copie o código da chave pública e cole na área indicada pelo seu servidor Git.
 	6. Na opção 'Settings' do servidor, procure pela opção 'SSH and GPG keys' e clique em 'New SSH key'.
 	7. Na área indicada cole a chave SSH pública e e confirme a ação. Ao fazer isto, você estará pronto pra enviar seus projetos do seu repositório Git local, para seu repositório Git remoto.
 
