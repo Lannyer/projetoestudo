@@ -161,7 +161,7 @@ git reset --hard <hash do commit>
 ~~~
 >Não recomendado no uso em trabalhos de equipe.
 
-__Git Checkout:__ usado para mudar para a nova branch.
+__git checkout:__ usado para mudar para a nova branch.
 _Ex:_
 ~~~
 git checkout <branch de destino>
@@ -181,7 +181,8 @@ git diff
 > Ele irá mostrar todos as linhas que foram alteradas.
 >P.s1: Ele não mostra onde foi feita a alteração, é necessário analisar e comparar para identificar as alterações.
 > O _git diff_ irá mostrar TODOS os arquivos modificados.
-> Para mostrar apenas os títulos dos arquivos basta usar o comando '--name-only'.
+
+Para mostrar apenas os títulos dos arquivos basta usar o comando '--name-only'.
 _Ex:_
 ~~~
 git diff --name-only
