@@ -219,7 +219,10 @@ Não tem necessidade de explicar que é preciso ter uma conta em um serviço de 
 1. Para criar um repositório no Git Hub é preciso:
 	- Ir no canto superior direito, ao lado da foto do usuário, clicar no botão de mais e em seguida em _New repository_. Ou procurar isso em algum canto da tela.
 	- Adicionar um nome para o repositório, sem letras maiúsculas e caracteres especiais, uma descrição e definir se ele será público ou privado.
-	- Escolhe-se criar um arquivo README ou não. É  basta clicar em _Create repository_
+	- Escolhe-se criar um arquivo README ou não. É possível acrescentar um arquivos README manualmente e enviar para o repositório.
+	- Escolhe-se, também, acrescentar ou não a licença do seu projeto, casa ela exista.
+	- .gitignore Lorem ipsum dolor sit amet.
+	- Tendo feito estes passos, basta clicar em _Create repository_
 	- Será criado uma url para o repositório.
 _Ex:_
 ~~~ 
@@ -231,6 +234,10 @@ _Ex:_
 	- Em seguida criasse um título para o repositório e colamos a chave pública gerada no _Git Bach_.
 
 3. Para criar as chaves públicas e privadas é necessário ter o _Git Bach_ "instalado", que nada mais é do que um terminal próprio do Git.
+
+Ao instalar o Cmder, o _Git Bach_ é instalado automaticamente. É possível entrar no site oficial do _Git_ e baixá-lo para o computador ou procurar por "Git Bach" no Google e fazer o download do arquivo. 
+
+Será necessário procurar um tutorial de como instalar pq eu honestamente não faço a puta.
 
 4. Depois de instalar o _bach_, vá até o terminal e digite o código:
 ~~~
@@ -256,7 +263,9 @@ git remote add origin https://github.com/usuario/repositorio.git
 >Comumente usasse o nome _origin_ para o repositório.
 > Para adicionar um repositório local em um repositório remoto
 usamos o comando 'add origin <url-do-diretorio.git>'
+>O comando 'remote -v' mostra as opções do repositório. Normalmente os comandos possíveis são _fetch_ e _push_.
 
+- O comando _fetch_ traz as alterações de uma branch no repositório remoto para o repositório local. Por exemplo, se um dev está no Japão, usamos o comando _fetch_ para trazer suas alterações no projeto para nossa máquina local.
 _Ex:_
 ~~~
 git fetch
