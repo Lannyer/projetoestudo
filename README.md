@@ -83,7 +83,7 @@ para configurar o email. É comum a configuração, também do editor, que é fe
 git config --global core.editor nome-do-editor
 ~~~
 >É comum vermos comandos com apenas um traço, que é a forma abreviada de um comando enquanto com dois traços é o comando "por extenso".
->Uma outra razão é permitir distinguir uma opção, constituída por vários caracteres, de uma sequência de opções. Se 'merged' fosse escrita com um traço seria interpretada como ~-m-e-r-g-e-d~. Um exemplo disso é o comando ~git commit -am "blabla"~ que executa o 'add' (a) e atribui uma 'mensage' (m) ao commit.
+>Uma outra razão é permitir distinguir uma opção, constituída por vários caracteres, de uma sequência de opções. Se 'merged' fosse escrita com um traço seria interpretada como ```-m-e-r-g-e-d```. Um exemplo disso é o comando ```git commit -am "blabla"``` que executa o 'add' (a) e atribui uma 'mensage' (m) ao commit.
 >Vários programas tem o comando 'help', que você pode acessar.
 __Ex:__
 ~~~
@@ -128,7 +128,7 @@ Para forçar a deleção, também do diretório acrescentamos '--comando'
 ~~~
 git rm --comando <file>
 ~~~
-> Ao usar 'git rm --cached "file"', removemos do histórico de edições. para mais funcionalidades 'git rm help'.
+> Ao usar ```git rm --cached "file"```, removemos do histórico de edições. para mais funcionalidades 'git rm help'.
 
 __git commit:__ - é oque, de fato, realiza as alterações do projeto. É de boas práticas realizar um commit junto de um comentário pertinente aos trabalhos realizados no projeto.
 _Ex:_
@@ -275,3 +275,24 @@ _Ex:_
 ~~~
 git push -u origin master
 ~~~
+
+__git ignore:__ usado para ignorar algum arquivo ou pasta. Para isso, basta criar um arquivo chamado .gitignore e nele colocar o nome dos aruiqvos, com extenção, para que ele seja ignorado quando executar adiçõs e commits.
+__Ex:__ 
+~~~
+título.html
+*.sql
+diretório/
+~~~
+>O GitHub possuí um repositório com gitignores mais populares, [neste link aqui](https://github.com/github/gitignore).
+
+__git revert:__ é utilizado no lugar do ~git reset~ para não perder as funcionalidades commitadas. ao usar o 'revert' ainda temos acesso ao commit feito errado. 
+>O salvador das sextas-feiras. Sem ele, não sextarás!
+
+Para voltar o commit sem perder o código, usamos o comando 'git log' e copiamos o hash do commit que desejamos desfazer
+__Ex:__
+~~~
+git revert --no-edit "hash do commit"
+~~~
+>Caso não seja usado o comando ```--no.edit```, o programa registrado na configuração do Git irá abrir com o código a ser editado.
+
+
