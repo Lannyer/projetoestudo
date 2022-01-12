@@ -66,7 +66,7 @@ O primeiro passo para configurar o Git é associar um nome de usuário e um emai
 
 **- Comandos básicos do Git**
 
-__Git config:__ para configurar o Git.
+__git config:__ para configurar o Git.
 ~~~
  git config --global
 ~~~
@@ -82,19 +82,19 @@ ou
 nome_do_programa -h
 ~~~
 
-__git --version:__ mostra se o Git está instalado e sua versão
-
-__git init:__ - para iniciar um repositório, levando em consideração TODOS os arquivos e pastas dentro do diretório. É criada uma pasta ".git", geralmente oculta.
-
-__git status:__ - mostra a situação do projeto.
-
 __help:__ - ao adicionar o comando "help" depois de um comando, abre-se a lista de opções desse comando.
 _Ex:_
 ~~~
 git commit help
 ~~~
 
-__git add__ - adiciona os arquivos para trabalho, fazendo que sejam localizados pelo Git quando utilizamos o comando 'git status'.
+__git --version:__ mostra se o Git está instalado e sua versão
+
+__git init:__ - para iniciar um repositório, levando em consideração TODOS os arquivos e pastas dentro do diretório. É criada uma pasta ".git", geralmente oculta.
+
+__git status:__ - mostra a situação do projeto.
+
+__git add:__ - adiciona os arquivos para trabalho, fazendo que sejam localizados pelo Git quando utilizamos o comando 'git status'.
 _Ex:_
 ~~~
 git add <file>
@@ -106,7 +106,7 @@ git add -A
 ~~~
 A letra "A" deve ser maiúscula. Para ver todas as opções do comando 'git add' 
 
-__Git Rm__ - para excluir arquivos da branch.
+__git rm:__ - para excluir arquivos da branch.
 _Ex:_
 ~~~
 git rm <file>
@@ -118,7 +118,7 @@ git rm --comando <file>
 ~~~
 > Ao usar 'git rm --cached "file"', removemos do histórico de edições. para mais funcionalidades 'git rm help'.
 
-__Git Commit__ - é oque, de fato, realiza as alterações do projeto. É de boas práticas realizar um commit junto de um comentário pertinente aos trabalhos realizados no projeto.
+__git commit:__ - é oque, de fato, realiza as alterações do projeto. É de boas práticas realizar um commit junto de um comentário pertinente aos trabalhos realizados no projeto.
 _Ex:_
 ~~~
 git commit -m "Comentário relevante"
@@ -126,20 +126,40 @@ git commit -m "Comentário relevante"
 > A função '-m' é utilizada para inserir um comentário ao commit. Se for usado apenas 'git commit' é necessário escrever um comentário e outros comandos, que honestamente, não consegui executar, nem fazer funcionar. Talvez pela versão do Git, ou do Cmder, serem diferentes dos usados nas vídeo-aulas. Para mais funções do 'git commit help'.
 >Utilizando o comando 'git commit -am "Comentário relevante"' adicionamos diretamente os arquivos não commitados, como se usássemos o comando 'git add -A' junto do 'git commit -m'
 
-__Git Log__ - retorna os commits feitos, com um código hash, a branch onde o commit foi realizado, dados como autor, data, etc e a mensagem do commit. 
+__git log:__ - retorna os commits feitos, com um código hash, a branch onde o commit foi realizado, dados como autor, data, etc e a mensagem do commit. 
 _Ex:_
 ~~~
 git log
 ~~~
--
---
 
-
-##GIT - 02
-
-
-__Git Branch:__ mostra com um asterisco na branch que estamos.
+__git branch:__ mostra com um asterisco na branch que estamos.
 > Para criação de uma nova branch usamos o comando 'git branch <nomedabranch>'. Este comando irá copiar toda a branch a partir da qual está sendo criada.
+
+---
+
+##GIT 02 - Título a ser decidido
+
+
+__git reset:__ utilizado para reverter alterações em uma branch.
+>Utiliza-se todo o código hash do commit, ou seus sete primeiros dígitos. 
+
+Existem 3 tipos de 'reset', são eles: soft, mixed e hard.
+
+**-** _Soft reset:_ é tulizado para retornar as edições para o commit desejado, mantendo os arquivos, e as edições feitas posteriormente, sem comitá-los. 
+~~~
+git reset --soft <hash do commit>
+~~~
+>Ao fazer um novo commit, os arquivos e edições posteriores ao commit que retornamos à ele, deixaram de existir, sendo substituídos pelo novo commit.
+
+**-** _Mixed reset:_ é semelhante ao Soft Reset, a única diferença é que os arquivos não estarão prontos para comitar, será necessário executar a adição dos arquivos e alterações.
+~~~
+git reset --mixed <hash do commit>
+~~~
+**-** _Hard Reset:_ elimina TUDO que foi feito após o commit que desejamos retornar para ele.
+~~~
+git reset --hard <hash do commit>
+~~~
+>Não recomendado no uso em trabalhos de equipe.
 
 __Git Checkout:__ usado para mudar para a nova branch.
 _Ex:_
