@@ -309,3 +309,38 @@ git pull origin "nome-da-branch"
 ~~~
 >Sempre faça um ```pull``` antes do ```push```. 
 
+---
+
+**_GIT_ 04 - Soyuz nerushimy respublik svobodnykh
+Splotila naveki velikaya Rus'!**
+
+É aqui que o comunismo se torna ferramenta das grandes empresas ~~capitalsitas~~ de tecnologia!
+
+Uma das principais funções do Git, se não a principal, na minha opinião fecal, é colaborar projetos de outros devs e permitir que outros devs colaborem com os nossos projetos. obviamente um projeto em sigilo de uma empresa nunca estará aberto para colaboração, ou replicação. Porém, os projetos estando abertos para colaboração, ou não, os processos colaborativos e práticos são os mesmos. 
+
+Vejamos agora como realizar as duas principais funções para colaboração e trabalho em equipe.
+
+__git clone:__ simplesmente, clona um projeto de um repositório remoto para o repositório local. Basta copiar a url do repositório que deseja clonar, entrar no diretório destino, através do terminal, e utilizar o comando.
+_Ex:_
+~~~
+git clone "url-do-repositório-remoto.com"
+~~~
+>Esse processo permite ter acesso à commits feitos no projeto, pulls e etc. É possível comitar e fazer edições no projeto, localmente. para realização de pushes e contribuições é ecessário realizar um ```fork```.
+
+__fork e merge:__ o _fork_ é usado para podermos colaborar com um projeto. Os passos para realização do fork são:
+
+1. Na página de um repositório, procure o botão **_"Fork"_** e clique nele.
+>Ao fazer isso, um novo repositório será criado na sua própria conta, com uma indicação mostrando apartir de qual projeto o repositório foi forkado;
+
+2. Em seguida realize o processo de clonagem com o comando ```git clone```, utilizando a url do repositório remoto criado na sua prórpia conta;
+
+3. Realize as alterações desejadas. Corrija bugs, crie novas funcionalidades, melhore as linhas de código... go nuts;
+
+4. Realize todos os processos já aprendidos de adição, commit, etc e então realize o push para o seu repositório remoto com o projeto. 
+>Não se esqueça de conferir em qual branch e em qual servidor está o projeto utizando o comando ```git remote -v```;
+
+5. Confira se tudo está dentro do que foi demandado e em seguida clique em **_"New pull request"_**;
+
+6. Verifique o destinatário, em **_"base fork"_** e se o projeto enviado está correto em **_"head fork"_** e em seguida clique em **_"Create pull request"_**;
+
+7. Na página que se abrirá, _"Open a pull request"_, e redija sua argumentação, defendendo o pq de suas alterações devem ser aceitas. Ao confirmar, basta esperar a resposta dos responsáveis pelo projeto. Se aceito, suas alterações serão agregadas ao projeto original, o que chamamos de _merge_;
